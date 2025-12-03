@@ -10,6 +10,7 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    icon: 'src/assets/icon',
   },
   rebuildConfig: {},
   makers: [
@@ -17,6 +18,13 @@ const config: ForgeConfig = {
     new MakerZIP({}, ['darwin']),
     new MakerRpm({}),
     new MakerDeb({}),
+    {
+      // Path to the icon to use for the app in the DMG window
+      name: '@electron-forge/maker-dmg',
+      config: {
+        icon: 'src/assets/icon.icns'
+      }
+    },
   ],
   plugins: [
     new VitePlugin({
