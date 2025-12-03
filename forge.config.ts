@@ -52,6 +52,18 @@ const config: ForgeConfig = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'aydengen',
+          name: 'sakutto-studio'
+        },
+        prerelease: true
+      }
+    }
+  ]
 };
 
 export default config;
