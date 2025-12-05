@@ -36,12 +36,12 @@ mv vite.renderer.config.ts vite.renderer.config.mts
 new VitePlugin({
   build: [
     {
-      entry: 'src/main.ts',
+      entry: 'src/main/index.ts',
       config: 'vite.main.config.mts',  // 改为 .mts
       target: 'main',
     },
     {
-      entry: 'src/preload.ts',
+      entry: 'src/main/preload.ts',
       config: 'vite.preload.config.mts',  // 改为 .mts
       target: 'preload',
     },

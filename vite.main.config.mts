@@ -8,4 +8,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  build: {
+    rollupOptions: {
+      external: [
+        // FFmpeg 相关包使用动态 require，需要外部化
+        '@ffmpeg-installer/ffmpeg',
+        'fluent-ffmpeg',
+      ],
+    },
+  },
 });
